@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="carddemo_suggested_text">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#D0D0D0</item>
+    </style>
+
+    <style name="carddemo_suggested_text_bold">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="carddemo_suggested_text_bold1">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="carddemo_suggested_header_text"></style>
+</resources>

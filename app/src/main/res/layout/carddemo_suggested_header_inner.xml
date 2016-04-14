@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    style="@style/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- This is the base Inner View inside a CardHeader.
+         You can customize it with your layout xml file and your CardHeader.
+         You can popolate your element with CardHeader#setupInnerViewElements() method -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/text_suggested_card1"
+        style="@style/carddemo_suggested_header_text"
+        android:textSize="18sp"
+        android:layout_marginLeft="0dp"
+        android:background="@color/colorPrimary"
+        android:paddingLeft="10dp"
+        android:gravity="center_vertical"
+        android:textColor="#FFF" />
+
+</LinearLayout>

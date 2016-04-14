@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="events_2003">
+        <item>powstanie firmy</item>
+    </string-array>
+    <string-array name="events_2005">
+        <item>partnerstwo z AVAYA</item>
+    </string-array>
+    <string-array name="events_2006">
+        <item>początek współpracy z PTC (obecny T-mobile)</item>
+        <item>pierwsze duże projekty między innymi z PTK Centertel, GE Bank</item>
+    </string-array>
+    <string-array name="events_2009">
+        <item>partnerstwo z VOXEO</item>
+    </string-array>
+    <string-array name="events_2012">
+        <item>uruchomienie projektu badawczego "Platforma monitorowania SocialMedia"</item>
+    </string-array>
+    <string-array name="events_2013">
+        <item>partnerstwo z VERINT</item>
+        <item>umowa z Głównym Inspektoratem Transportu Drogowego</item>
+        <item>pierwszy w Polsce projekt Speech Analytics dla ING Bank Śląski (w oparciu o VERINT)</item>
+    </string-array>
+    <string-array name="events_2014">
+        <item>kolejne projekty, między innymi dla Metra Warszawskiego, Ultimo S.A., OHP</item>
+    </string-array>
+    <string-array name="events_2015">
+        <item>umowy z BPH S.A.</item>
+        <item>projekt dla BNP Paribas NBP</item>
+    </string-array>
+
+
+</resources>

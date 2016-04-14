@@ -1,0 +1,16 @@
+<!-- [ Mirror metadata ] generatedAt: 1460455042210 --><!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/carddemo_native_suggested_layout">
+        <card_main_content_layout>
+            <!-- Replace this FrameLayout with a fragment like so:
+            <_content layout="@layout/my_fragment_layout">
+                <my_text_view>TextView in fragment</my_text_view>
+            </_content>
+            -->
+        </card_main_content_layout>
+    </_content>
+</screen>

@@ -1,0 +1,17 @@
+<!-- [ Mirror metadata ] generatedAt: 1460455042202 --><!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/carddemo_example_inner_content">
+        <!-- ImageView Examples:
+        <colorBorder src="@drawable/image_resource" />
+        <colorBorder src="relative_path/image.jpg" /> -->
+        <colorBorder />
+        <!-- TextView Examples:
+        <card_main_inner_simple_title text="@string/string_resource" />
+        <card_main_inner_simple_title text="Text literal" textSize="14sp" /> -->
+        <card_main_inner_simple_title />
+    </_content>
+</screen>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Outsourcing Partner</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Ustawienia</string>
+    <string name="services.card.cc.title">Rozwiązania dla Contact Center</string>
+    <string name="services_card_cc_desc">Specjalizujemy się w zaawansowanych i efektywnych narzędziach komunikacji głosowej. Tworzymy rozwiązania dla Call Center oraz telefonii wewnętrznej. W obszarze komunikacji jesteśmy specjalistami w AVAYA.</string>
+    <string name="services_card_systems_title">Zaawansowane systemy IT</string>
+    <string name="services_card_systems_desc">Wspieramy klientów w tworzeniu oprogramowania na zamówienie. Korzystamy z technologii Java, .Net, Python i Scala na bazie licencji Open Source, jak również na bazie rozwiązań komercyjnych (Voxeo).</string>
+    <string name="services_card_bigdata_title">Big Data</string>
+    <string name="services_card_bigdata_desc">Realizujemy zadania związane z integracją danych, przetwarzaniem mowy czy optymalizacją sprzedaży. Pracujemy głównie na Apache Hadoop, Scala, Apache Spark, Elasticsearch.</string>
+    <string name="menu_services">Usługi</string>
+    <string name="menu_history">Historia</string>
+</resources>

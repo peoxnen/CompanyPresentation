@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.vipul.hp_hp.timelineview.TimelineView
+            android:id="@+id/time_marker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="53dp"
+            android:paddingBottom="53dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:marker_size="45dp"
+            app:marker="@drawable/timeline_marker"
+            app:line_size="4dp"
+            app:line="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:text="2015" />
+    </RelativeLayout>
+
+    <it.gmariotti.cardslib.library.view.CardViewNative xmlns:card="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/list_cardId"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
+        card:card_layout_resourceID="@layout/carddemo_native_suggested_layout">
+
+        <TextView
+            android:id="@+id/tx_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Random"
+            android:padding="5dp"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="20dp"
+            android:layout_gravity="center_vertical" />
+    </it.gmariotti.cardslib.library.view.CardViewNative>
+
+
+</LinearLayout>
