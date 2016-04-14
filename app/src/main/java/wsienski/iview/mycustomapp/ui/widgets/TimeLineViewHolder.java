@@ -1,4 +1,4 @@
-package wsienski.iview.mycustomapp.ui.timeline;
+package wsienski.iview.mycustomapp.ui.widgets;
 
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;

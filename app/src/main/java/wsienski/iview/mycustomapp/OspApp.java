@@ -1,4 +1,4 @@
-package wsienski.iview.mycustomapp.ui;
+package wsienski.iview.mycustomapp;
 
 import android.app.Application;
 

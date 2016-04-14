@@ -1,4 +1,4 @@
-package wsienski.iview.mycustomapp.ui.timeline;
+package wsienski.iview.mycustomapp.data.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;

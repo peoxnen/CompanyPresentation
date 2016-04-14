@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.security.spec.ECField;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,8 +15,8 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import wsienski.iview.mycustomapp.R;
-import wsienski.iview.mycustomapp.ui.timeline.TimeLineAdapter;
-import wsienski.iview.mycustomapp.ui.timeline.TimeLineModel;
+import wsienski.iview.mycustomapp.data.adapter.TimeLineAdapter;
+import wsienski.iview.mycustomapp.data.model.TimeLineModel;
 
 /**
  * Created by WSienski on 06/04/2016.

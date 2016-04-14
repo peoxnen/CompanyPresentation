@@ -1,11 +1,10 @@
-package wsienski.iview.mycustomapp.ui.cards;
+package wsienski.iview.mycustomapp.ui.widgets;
 
 import android.content.Context;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -13,6 +12,7 @@ import it.gmariotti.cardslib.library.internal.Card;
 import it.gmariotti.cardslib.library.internal.CardHeader;
 import it.gmariotti.cardslib.library.internal.CardThumbnail;
 import wsienski.iview.mycustomapp.R;
+import wsienski.iview.mycustomapp.data.model.SuggestedCardDataModel;
 
 /**
  * @author Gabriele Mariotti (gabri.mariotti@gmail.com)

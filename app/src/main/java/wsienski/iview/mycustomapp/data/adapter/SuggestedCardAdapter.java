@@ -1,4 +1,4 @@
-package wsienski.iview.mycustomapp.ui.cards;
+package wsienski.iview.mycustomapp.data.adapter;
 
 import android.content.Context;
 import android.view.View;

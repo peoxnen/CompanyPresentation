@@ -1,4 +1,4 @@
-package wsienski.iview.mycustomapp.ui.cards;
+package wsienski.iview.mycustomapp.data.model;
 
 import android.widget.TextView;
 

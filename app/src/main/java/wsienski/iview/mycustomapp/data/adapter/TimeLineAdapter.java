@@ -1,4 +1,4 @@
-package wsienski.iview.mycustomapp.ui.timeline;
+package wsienski.iview.mycustomapp.data.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import wsienski.iview.mycustomapp.R;
+import wsienski.iview.mycustomapp.data.model.TimeLineModel;
+import wsienski.iview.mycustomapp.ui.widgets.TimeLineViewHolder;
 
 /**
  * Created by HP-HP on 05-12-2015.

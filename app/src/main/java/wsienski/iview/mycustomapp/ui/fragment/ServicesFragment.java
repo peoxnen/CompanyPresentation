@@ -15,8 +15,8 @@ import it.gmariotti.cardslib.library.internal.CardArrayAdapter;
 import it.gmariotti.cardslib.library.view.CardListView;
 import wsienski.iview.mycustomapp.R;
 import wsienski.iview.mycustomapp.ui.activity.MainActivity;
-import wsienski.iview.mycustomapp.ui.cards.SuggestedCard;
-import wsienski.iview.mycustomapp.ui.cards.SuggestedCardDataModel;
+import wsienski.iview.mycustomapp.ui.widgets.SuggestedCard;
+import wsienski.iview.mycustomapp.data.model.SuggestedCardDataModel;
 
 /**
  * Created by WSienski on 25/03/2016.
