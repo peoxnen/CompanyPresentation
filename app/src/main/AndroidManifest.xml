@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="wsienski.iview.mycustomapp">
+    package="pl.osp.osptemplate">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.activity.StartActivity"
+            android:name="pl.osp.osptemplate.ui.activity.StartActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/app_name">
             <intent-filter>
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activity.MainActivity"
+            android:name="pl.osp.osptemplate.ui.activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:clearTaskOnLaunch="true"
             android:configChanges="orientation|keyboardHidden|screenSize"></activity>
