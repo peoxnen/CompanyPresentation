@@ -14,9 +14,9 @@ import it.gmariotti.cardslib.library.internal.Card;
 import it.gmariotti.cardslib.library.internal.CardArrayAdapter;
 import it.gmariotti.cardslib.library.view.CardListView;
 import pl.osp.osptemplate.R;
+import pl.osp.osptemplate.data.model.SuggestedCardDataModel;
 import pl.osp.osptemplate.ui.activity.MainActivity;
 import pl.osp.osptemplate.ui.widgets.SuggestedCard;
-import pl.osp.osptemplate.data.model.SuggestedCardDataModel;
 
 /**
  * Created by WSienski on 25/03/2016.

@@ -12,29 +12,26 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
+import pl.osp.osptemplate.R;
+import pl.osp.osptemplate.data.model.Services;
+import pl.osp.osptemplate.network.IService;
+import pl.osp.osptemplate.ui.fragment.SampleFragment;
+import pl.osp.osptemplate.ui.fragment.ServicesFragment;
+import pl.osp.osptemplate.ui.fragment.TimeLineFragment;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import rx.Observable;
-import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import timber.log.Timber;
-import pl.osp.osptemplate.R;
-import pl.osp.osptemplate.network.IService;
-import pl.osp.osptemplate.network.Test;
-import pl.osp.osptemplate.ui.fragment.SampleFragment;
-import pl.osp.osptemplate.ui.fragment.ServicesFragment;
-import pl.osp.osptemplate.ui.fragment.TimeLineFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -87,61 +84,15 @@ public class MainActivity extends AppCompatActivity
 
         IService service = retrofit.create(IService.class);
 
-//        Call<Test> testCall = service.getTest();
-//        testCall.enqueue(new Callback<Test>() {
-//            @Override
-//            public void onResponse(Call<Test> call, Response<Test> response) {
-//                Log.d("witek", "onResponse");
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Test> call, Throwable t) {
-//                Log.d("witek", "onFailure");
-//            }
-//        });
-
-        Observable<Test> observable = service.getRxTest();
-
-        observable.subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .unsubscribeOn(Schedulers.io())
-                .subscribe(new Subscriber<Test>() {
-                    @Override
-                    public void onCompleted() {
-                        Toast.makeText(getApplicationContext(),
-                                "Completed",
-                                Toast.LENGTH_SHORT)
-                                .show();
-                        Timber.d("Completed");
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        Toast.makeText(getApplicationContext(),
-                                e.getMessage(),
-                                Toast.LENGTH_SHORT)
-                                .show();
-                    }
-
-                    @Override
-                    public void onNext(Test dessertItemCollectionDao) {
-                        Toast.makeText(getApplicationContext(),
-                                dessertItemCollectionDao.getMsg(),
-                                Toast.LENGTH_SHORT)
-                                .show();
-                    }
-                });
-
-        Observable<Test> observable2 = service.getRxTest2();
+        Observable<Services> observable2 = service.getServices();
 
         observable2.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .unsubscribeOn(Schedulers.io())
-                .subscribe(test -> {
-                    Log.d("witek", "wynik " + test);
+                .flatMap(servicelist -> Observable.from(servicelist.getServices()))
+                .subscribe(serviceItem -> {
+                    Timber.d("Service title: %s", serviceItem.getTitle());
                 });
-
-
     }
 
     @Override

@@ -1,7 +1,7 @@
 package pl.osp.osptemplate.network;
 
 
-import retrofit2.Call;
+import pl.osp.osptemplate.data.model.Services;
 import retrofit2.http.GET;
 import rx.Observable;
 
@@ -10,12 +10,6 @@ import rx.Observable;
  */
 public interface IService {
 
-    @GET("/test")
-    Call<Test> getTest();
-
-    @GET("/test")
-    Observable<Test> getRxTest();
-
-    @GET("/test2")
-    Observable<Test> getRxTest2();
+    @GET("/services")
+    Observable<Services> getServices();
 }
