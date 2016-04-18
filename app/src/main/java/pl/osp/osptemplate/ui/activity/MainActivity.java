@@ -15,31 +15,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import javax.inject.Inject;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import pl.osp.osptemplate.OspApp;
 import pl.osp.osptemplate.R;
-import pl.osp.osptemplate.data.model.Services;
 import pl.osp.osptemplate.di.component.ActivityComponent;
 import pl.osp.osptemplate.di.component.DaggerActivityComponent;
-import pl.osp.osptemplate.network.IApiService;
 import pl.osp.osptemplate.ui.fragment.SampleFragment;
 import pl.osp.osptemplate.ui.fragment.ServicesFragment;
 import pl.osp.osptemplate.ui.fragment.TimeLineFragment;
-import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
-import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
-
-    @Inject
-    IApiService apiService;
 
     @Bind(R.id.fab)
     FloatingActionButton fab;
@@ -58,7 +47,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         mComponent = DaggerActivityComponent.builder().appComponent(getApp().getAppComponent()).build();
         mComponent.inject(this);
-
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
 
@@ -76,16 +64,6 @@ public class MainActivity extends AppCompatActivity
 
         getWindow().getDecorView().setBackgroundColor(getResources().getColor(R.color.gray_background));
 
-
-        Observable<Services> observable2 = apiService.getServices();
-
-        observable2.subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .unsubscribeOn(Schedulers.io())
-                .flatMap(servicelist -> Observable.from(servicelist.getServices()))
-                .subscribe(serviceItem -> {
-                    Timber.d("Service title: %s", serviceItem.getTitle());
-                });
     }
 
     protected OspApp getApp() {
