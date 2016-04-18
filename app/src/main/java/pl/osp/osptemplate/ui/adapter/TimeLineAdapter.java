@@ -1,4 +1,4 @@
-package pl.osp.osptemplate.data.adapter;
+package pl.osp.osptemplate.ui.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pl.osp.osptemplate.R;
-import pl.osp.osptemplate.data.model.TimeLineModel;
+import pl.osp.osptemplate.ui.model.TimeLineModel;
 import pl.osp.osptemplate.ui.widgets.TimeLineViewHolder;
 
 /**

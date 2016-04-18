@@ -12,7 +12,7 @@ import it.gmariotti.cardslib.library.internal.Card;
 import it.gmariotti.cardslib.library.internal.CardHeader;
 import it.gmariotti.cardslib.library.internal.CardThumbnail;
 import pl.osp.osptemplate.R;
-import pl.osp.osptemplate.data.model.SuggestedCardDataModel;
+import pl.osp.osptemplate.ui.model.SuggestedCardDataModel;
 
 /**
  * @author Gabriele Mariotti (gabri.mariotti@gmail.com)

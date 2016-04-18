@@ -15,19 +15,19 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import javax.inject.Inject;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
+import pl.osp.osptemplate.OspApp;
 import pl.osp.osptemplate.R;
 import pl.osp.osptemplate.data.model.Services;
-import pl.osp.osptemplate.network.IService;
+import pl.osp.osptemplate.di.component.ActivityComponent;
+import pl.osp.osptemplate.di.component.DaggerActivityComponent;
+import pl.osp.osptemplate.network.IApiService;
 import pl.osp.osptemplate.ui.fragment.SampleFragment;
 import pl.osp.osptemplate.ui.fragment.ServicesFragment;
 import pl.osp.osptemplate.ui.fragment.TimeLineFragment;
-import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -38,6 +38,9 @@ public class MainActivity extends AppCompatActivity
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
+    @Inject
+    IApiService apiService;
+
     @Bind(R.id.fab)
     FloatingActionButton fab;
     @Bind(R.id.toolbar)
@@ -47,10 +50,15 @@ public class MainActivity extends AppCompatActivity
     @Bind(R.id.nav_view)
     NavigationView navigationView;
 
+    private ActivityComponent mComponent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mComponent = DaggerActivityComponent.builder().appComponent(getApp().getAppComponent()).build();
+        mComponent.inject(this);
+
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
 
@@ -69,22 +77,7 @@ public class MainActivity extends AppCompatActivity
         getWindow().getDecorView().setBackgroundColor(getResources().getColor(R.color.gray_background));
 
 
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-        // set your desired log level
-        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-        httpClient.addInterceptor(logging);  // <-- this is the important line!
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://demo0858935.mockable.io/")
-                .client(httpClient.build())
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .build();
-
-        IService service = retrofit.create(IService.class);
-
-        Observable<Services> observable2 = service.getServices();
+        Observable<Services> observable2 = apiService.getServices();
 
         observable2.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -93,6 +86,10 @@ public class MainActivity extends AppCompatActivity
                 .subscribe(serviceItem -> {
                     Timber.d("Service title: %s", serviceItem.getTitle());
                 });
+    }
+
+    protected OspApp getApp() {
+        return (OspApp) getApplicationContext();
     }
 
     @Override

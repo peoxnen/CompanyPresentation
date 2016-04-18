@@ -15,8 +15,8 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import pl.osp.osptemplate.R;
-import pl.osp.osptemplate.data.adapter.TimeLineAdapter;
-import pl.osp.osptemplate.data.model.TimeLineModel;
+import pl.osp.osptemplate.ui.adapter.TimeLineAdapter;
+import pl.osp.osptemplate.ui.model.TimeLineModel;
 
 /**
  * Created by WSienski on 06/04/2016.

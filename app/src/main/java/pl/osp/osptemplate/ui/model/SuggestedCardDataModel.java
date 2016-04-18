@@ -1,4 +1,4 @@
-package pl.osp.osptemplate.data.model;
+package pl.osp.osptemplate.ui.model;
 
 import it.gmariotti.cardslib.library.internal.Card;
 

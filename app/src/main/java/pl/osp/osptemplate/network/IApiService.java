@@ -8,7 +8,7 @@ import rx.Observable;
 /**
  * Created by WSienski on 08/04/2016.
  */
-public interface IService {
+public interface IApiService {
 
     @GET("/services")
     Observable<Services> getServices();

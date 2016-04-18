@@ -1,4 +1,4 @@
-package pl.osp.osptemplate.data.adapter;
+package pl.osp.osptemplate.ui.adapter;
 
 import android.content.Context;
 import android.view.View;
