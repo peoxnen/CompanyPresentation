@@ -24,12 +24,14 @@ public class ServicesPresenter implements BasePresenter<ServicesView> {
     }
 
     public void getServices() {
+        mainView.showProgressBar(true);
         subscription = apiService.getServices().subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .unsubscribeOn(Schedulers.io())
                 //.flatMap(servicelist -> Observable.from(servicelist.getServices()))
                 .subscribe(serviceItem -> {
                     mainView.loadServices(serviceItem);
+                    mainView.showProgressBar(false);
                     Timber.d("Services size: %s", serviceItem.getServices().length);
                 });
     }
@@ -42,5 +44,6 @@ public class ServicesPresenter implements BasePresenter<ServicesView> {
     @Override
     public void detachView() {
         if (subscription != null) subscription.unsubscribe();
+        mainView = null;
     }
 }

@@ -12,6 +12,8 @@ import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import fr.castorflex.android.circularprogressbar.CircularProgressBar;
+import fr.castorflex.android.circularprogressbar.CircularProgressDrawable;
 import it.gmariotti.cardslib.library.internal.Card;
 import it.gmariotti.cardslib.library.internal.CardArrayAdapter;
 import it.gmariotti.cardslib.library.view.CardListView;
@@ -32,9 +34,10 @@ import pl.osp.osptemplate.ui.widgets.SuggestedCard;
  */
 public class ServicesFragment extends Fragment implements ServicesView {
 
+    @Bind(R.id.progressBar)
+    CircularProgressBar circularProgressBar;
     @Bind(R.id.carddemo_list_gplaycard)
     CardListView cardListView;
-
     @Inject
     ServicesPresenter servicesPresenter;
 
@@ -95,6 +98,14 @@ public class ServicesFragment extends Fragment implements ServicesView {
         if (cardListView != null) {
             cardListView.setAdapter(mCardArrayAdapter);
         }
+    }
+
+    @Override
+    public void showProgressBar(boolean isShown) {
+        if(isShown)
+            ((CircularProgressDrawable) circularProgressBar.getIndeterminateDrawable()).start();
+        else
+            circularProgressBar.progressiveStop();
     }
 
     public OspApp getApp() {

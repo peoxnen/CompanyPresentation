@@ -8,4 +8,6 @@ import pl.osp.osptemplate.data.model.Services;
 public interface ServicesView {
 
     void loadServices(Services services);
+
+    void showProgressBar(boolean isShown);
 }
