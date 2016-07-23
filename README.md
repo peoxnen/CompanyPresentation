@@ -1,6 +1,9 @@
 # CompanyPresentation
 App presents basic info about company (business areas, history, projects, basic info). Application presents informations using cards. History of company display in timeline. App starts with animation (SVG file) of the company logo . Architecture MVP.
-
+<h1>Status:</h1>
+Suspended
+<h1>Category:</h1>
+Demo application
 <h1>Libraries used:</h1>
 <b>Dependency Injection</b>
 <ul>
