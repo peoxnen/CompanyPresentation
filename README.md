@@ -1,4 +1,4 @@
-# MyCustomApp
+# CompanyPresentation
 App presents basic info about company. Application presents information with cards. History o company presents in timeline. App starts with animations the logo of the company. Architecture MVP.
 
 <h1>Libraries used:</h1>
